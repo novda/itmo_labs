@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>SQL</title>
+    </head>    
+    <body>
+        <form id="form" action="#"><p>Пароль:</p>
+            <input type="text" id="password" size="40">
+            <input type="submit" value="Отправить">
+        </form>
+        
+        <p>SQL-инъекции представляют собой один из самых интересных,
+        сложных и мощных видов атак. Для их реализации требуются хорошие
+        знания баз данных, самого SQL и веб-программирования. Если данные
+        перед отправкой на сервер не проходят должной проверки, то существует
+        возможность проведения атаки данного типа. SQL-инъекции — это атаки на
+        веб-приложения, использующие для своей работы базы данных. Атаки, по
+        сути, представляют собой внедрение кода в существующий запрос с целью
+        получения доступа к данным или манипулирования ими. Благодаря
+        повсеместной распространенности SQL атаки этого типа работают
+        практически на всех платформах. </p>
+    </body>
+    <script>
+        document.ondragstart = function () {return false}   // запрешает перемещать
+        document.onselectstart = function () {return false}   // запрешает выделять 
+        document.oncontextmenu =  function () {return false}  // запрешает вызывать контекстного меню
+    </script>
+    
+    <script type="text/javascript">
+        var elementForm = document.querySelector('#form')   // слушает форму
+        
+        elementForm.addEventListener('submit', function() {
+            var str = document.querySelector('#password').value  // принимает значение введенного пароля
+            var a = -~[]*(""+-~[]+-~-~-~-~-~[]+-~-~true);  // пароль в защифрованным виде
+            
+            if (str === String(a)) {  // если пароль был введен правильно то:
+                document.ondragstart = ''    // разрешение перемещать
+                document.onselectstart = ''  // разрешение выделять
+                document.oncontextmenu = ''  // разрешение вызывать контекстного меню
+            }
+        });
+    </script>
+</html>
